@@ -20,7 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32217878-0e42-427b-bec5-f551070a2e1f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/toolshed_app/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/toolshed_project/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toolshed_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/toolshed_app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toolshed_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/toolshed_project/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +41,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -65,5 +70,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-875" y="112" width="670" height="676" key="search.everywhere.popup" timestamp="1591732106800">
+      <screen x="-1080" y="-552" width="1080" height="1897" />
+    </state>
+    <state x="-875" y="112" width="670" height="676" key="search.everywhere.popup/0.23.1920.988/-2520.576.1440.877/-1080.-552.1080.1897@-1080.-552.1080.1897" timestamp="1591732106800" />
   </component>
 </project>
