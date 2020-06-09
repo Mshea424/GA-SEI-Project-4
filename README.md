@@ -1,0 +1,1 @@
+The purpose of this app is to work as a forum where different construction tools & equipment can be posted for review by forum members, from the novice DIY weekend project warrior, to the carreer professional. 
