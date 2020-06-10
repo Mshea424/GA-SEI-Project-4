@@ -24,7 +24,6 @@ class Item(models.Model):
 class Review(models.Model):
     name = models.CharField(max_length=255)
     body = models.TextField()
-    thumbs_count = models.CharField(max_length=15)
     rating = models.CharField(max_length=3)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews')
     item = models.ForeignKey(Item, on_delete=models.CASCADE, related_name='reviews')
