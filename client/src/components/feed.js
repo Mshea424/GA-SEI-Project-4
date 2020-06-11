@@ -36,7 +36,8 @@ export default class feed extends Component {
                         <Link to={`/item/${v.id}/`}>
                             <div>{v.name}</div>
                             <img src={v.photo_url} width="400" />
-                            <div>{v.rating}</div>
+                            <div>{v.description}</div>
+                            <div>Overall Rating: </div>
                             <div>Reviews: {v.reviews.length}</div>
                         </Link>
                     )
