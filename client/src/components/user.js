@@ -33,7 +33,7 @@ export default class User extends Component {
                     return (
                         <Link to={`/user/${v.id}/`}>
                             <div>{v.name}</div>
-                            <img src={v.photo_url} width="400" />
+                            <img src={v.photo_url} width="400" alt=''/>
                             <div>Contributed Reviews: {v.reviews.length}</div>
                             <div>{v.bio}</div>
                         </Link>

@@ -9,6 +9,8 @@ export default class NavBar extends Component {
                 <Link to="/">Home Feed</Link>
                 
                 <Link to="/user">Users</Link>
+
+                <Link to="/createuser">Create Profile</Link>
                                 
             </div>
         )

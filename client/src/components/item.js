@@ -15,7 +15,7 @@ export default class Item extends Component {
 
     componentDidMount() {
         this.getItem()
-        
+        console.log(this.props.userName)
     }
 
     getItem = async () => {
@@ -69,7 +69,7 @@ export default class Item extends Component {
             <div>
                 <div>
                     <h3>{this.state.name}</h3>
-                    <img src={this.state.photo_url} />
+                    <img src={this.state.photo_url} alt=''/>
                     <p>Overall Rating: {this.state.totalRating}</p>
                     <p>{this.state.description}</p>
                 </div>

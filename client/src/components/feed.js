@@ -10,7 +10,7 @@ export default class Feed extends Component {
 
     componentDidMount() {
         this.getFeed()
-        
+        console.log(this.props.userName)
     }
 
     getFeed = async () => {
@@ -35,7 +35,7 @@ export default class Feed extends Component {
                     return (
                         <Link to={`/item/${v.id}/`}>
                             <div>{v.name}</div>
-                            <img src={v.photo_url} width="400" />
+                            <img src={v.photo_url} width="400" alt=''/>
                             <div>{v.description}</div>
                             <div>Overall Rating: </div>
                             <div>Reviews: {v.reviews.length}</div>

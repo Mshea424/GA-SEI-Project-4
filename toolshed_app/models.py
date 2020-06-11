@@ -4,7 +4,7 @@ from django.db import models
 class User(models.Model):
     name = models.CharField(max_length=100)
     bio = models.CharField(max_length=500)
-    photo_url = models.TextField()
+    photo_url = models.TextField(default='https://png.pngitem.com/pimgs/s/214-2145309_blank-profile-picture-circle-hd-png-download.png')
 
     def __str__(self):
         return self.name
