@@ -20,7 +20,7 @@ export default class App extends Component {
   }
 
   getCreateUser = () => {
-    return (<CreateUser setUserStatus = {this.setUserStatus} />)
+    return (<CreateUser setUserStatus = {this.setUserStatus} userName = {this.state.userName} userId = {this.state.userId}/>)
   }
 
   getFeed = () => {

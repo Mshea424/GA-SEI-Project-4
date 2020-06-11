@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 export default class CreateUser extends Component {
     
@@ -34,20 +35,32 @@ export default class CreateUser extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.formSubmit}>
+                { this.props.userName === 'guest' ?
                     <div>
-                        <label htmlFor="name">Nickname:</label>
-                        <input onChange={this.inputChange} type="text" name="name"/>
-                        <label htmlFor="name">About You:</label>
-                        <input onChange={this.inputChange} type="text" name="bio"/>
-                        <label htmlFor="name">Submit a link to any photo you'd like to represent you:</label>
-                        <input onChange={this.inputChange} type="text" name="photo_url"/>
+                        <form onSubmit={this.formSubmit}>
+                            <div>
+                                <label htmlFor="name">Profile Name:</label>
+                                <input onChange={this.inputChange} type="text" name="name"/>
+                            </div>
+                            <div>
+                                <label htmlFor="name">About You: (bio)</label>
+                                <input onChange={this.inputChange} type="text" name="bio"/>
+                            </div>
+                            <div>
+                                <label htmlFor="name">Profile Photo (url):</label>
+                                <input onChange={this.inputChange} type="text" name="photo_url"/>
+                            </div>
+                            <div>
+                                <input type="submit" value="Submit Profile"/>
+                            </div>
+                        </form>
+                    </div> :
+                    <div>
+                        <h2>Welcome, {this.props.userName}!</h2>
+                        <p>Your profile has been set up!</p>
+                        <Link to={"/"}>Click here to return to the Home Page</Link>
                     </div>
-                    <input type="submit" value="Set this as my nickname"/>
-                </form>
-                name
-                bio
-                photo_url
+                }
             </div>
         )
     }
