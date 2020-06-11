@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-export default class item extends Component {
+export default class Item extends Component {
 
     state = {
         name: '',

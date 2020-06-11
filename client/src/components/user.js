@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
-export default class user extends Component {
+export default class User extends Component {
     state = {
         users: []
     }
@@ -28,6 +29,16 @@ export default class user extends Component {
         return (
             <div>
                 <h1>User Page</h1>
+                {this.state.users.map((v) =>{
+                    return (
+                        <Link to={`/user/${v.id}/`}>
+                            <div>{v.name}</div>
+                            <img src={v.photo_url} width="400" />
+                            <div>Contributed Reviews: {v.reviews.length}</div>
+                            <div>{v.bio}</div>
+                        </Link>
+                    )
+                })}
             </div>
         )
     }
