@@ -14,6 +14,7 @@ class Item(models.Model):
     name = models.CharField(max_length=100)
     photo_url = models.TextField()
     manufacturer = models.CharField(max_length=100)
+    description = models.TextField(default = '')
     rating = models.CharField(max_length=3)
     vendor_url = models.TextField()
 

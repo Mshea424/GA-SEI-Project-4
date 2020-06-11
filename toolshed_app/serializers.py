@@ -39,4 +39,4 @@ class FeedSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Item
-        fields = ('id', 'name', 'photo_url', 'rating', 'reviews', 'thumbs')
+        fields = ('id', 'name', 'photo_url', 'rating', 'reviews', 'thumbs', 'description')
