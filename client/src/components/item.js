@@ -69,6 +69,7 @@ export default class item extends Component {
             <div>
                 <div>
                     <h3>{this.state.name}</h3>
+                    <img src={this.state.photo_url} />
                     <p>Overall Rating: {this.state.totalRating}</p>
                     <p>{this.state.description}</p>
                 </div>
