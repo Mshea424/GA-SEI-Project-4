@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 export default class CreateUser extends Component {
     
@@ -15,12 +16,18 @@ export default class CreateUser extends Component {
         console.log(this.state)
     }
 
-    formSubmit = (evt) => {
+    formSubmit = async (evt) => {
         evt.preventDefault()
-        const newState = {...this.state}
-        newState.redirect = true
-        this.props.setUserName(this.state.name)
-        this.setState(newState)
+        
+        try {
+           const res = await axios.post('/api/v1/user/', this.state) 
+           this.props.setUserName(this.state.name)
+        } catch (error) {
+            console.log('---- COULD NOT POST NEW USER ----')
+            console.log(error)
+            console.log('--------------------------------------')
+        }
+        
     }
 
     render() {
