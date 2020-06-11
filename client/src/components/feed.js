@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 export default class feed extends Component {
+    
     state = {
         items: []
     }
@@ -37,7 +38,8 @@ export default class feed extends Component {
                             <img src={v.photo_url} width="400" />
                             <div>{v.rating}</div>
                             <div>Reviews: {v.reviews.length}</div>
-                        </Link>)
+                        </Link>
+                    )
                 })}
             </div>
         )

@@ -42,13 +42,14 @@ export default class item extends Component {
                 <div>
                     <h3>Reviews:</h3>
                     {this.state.reviews.map((v) => {
-                        return (<div>
-                            <p>{v.rating}</p>
-                            <h4>{v.name}</h4>
-                            <p>{v.body}</p>
-                            <p>Thumbs up: {v.thumbs.length}</p>
-
-                        </div>)
+                        return (
+                            <div>
+                                <p>{v.rating}</p>
+                                <h4>{v.name}</h4>
+                                <p>{v.body.substring(0, 10) + '...'}</p>
+                                <p>Thumbs up: {v.thumbs.length}</p>
+                            </div>
+                        )
                     })}
                     
                     
