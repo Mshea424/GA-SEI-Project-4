@@ -9,24 +9,26 @@ import CreateUser from './components/CreateUser'
 export default class App extends Component {
   state = {
     userName: 'guest',
+    userId: null
   }
 
-  setUserName = (userName) => {
+  setUserStatus = (userName, userId) => {
     const newState = { ...this.state }
     newState.userName = userName
+    newState.userId =  userId
     this.setState(newState)
   }
 
   getCreateUser = () => {
-    return (<CreateUser setUserName = {this.setUserName} />)
+    return (<CreateUser setUserStatus = {this.setUserStatus} />)
   }
 
   getFeed = () => {
-    return (<Feed userName = {this.state.userName} />) 
+    return (<Feed userName = {this.state.userName} userId = {this.state.userId} />) 
   }
 
   getItem = (routerProps) => {
-    return (<Item userName={this.state.userName} {...routerProps}/>)
+    return (<Item userName={this.state.userName} userId = {this.state.userId} {...routerProps}/>)
   
   }
 

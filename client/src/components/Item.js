@@ -16,6 +16,7 @@ export default class Item extends Component {
     componentDidMount() {
         this.getItem()
         console.log(this.props.userName)
+        console.log(this.props.userId)
     }
 
     getItem = async () => {

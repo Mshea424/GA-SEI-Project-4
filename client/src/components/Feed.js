@@ -11,6 +11,7 @@ export default class Feed extends Component {
     componentDidMount() {
         this.getFeed()
         console.log(this.props.userName)
+        console.log(this.props.userId)
     }
 
     getFeed = async () => {

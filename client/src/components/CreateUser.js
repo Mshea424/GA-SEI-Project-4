@@ -21,7 +21,8 @@ export default class CreateUser extends Component {
         
         try {
            const res = await axios.post('/api/v1/user/', this.state) 
-           this.props.setUserName(this.state.name)
+           this.props.setUserStatus(res.data.name, res.data.id)
+           console.log(res.data)
         } catch (error) {
             console.log('---- COULD NOT POST NEW USER ----')
             console.log(error)
