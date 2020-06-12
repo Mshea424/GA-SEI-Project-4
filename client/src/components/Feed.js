@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import '../App.css'
 
 export default class Feed extends Component {
     
@@ -35,11 +36,13 @@ export default class Feed extends Component {
                 {this.state.items.map((v) =>{
                     return (
                         <Link to={`/item/${v.id}/`}>
-                            <div>{v.name}</div>
-                            <img src={v.photo_url} width="400" alt=''/>
-                            <div>{v.description}</div>
-                            <div>Overall Rating: </div>
-                            <div>Reviews: {v.reviews.length}</div>
+                            <div className="card">
+                                <div>{v.name}</div>
+                                <img className="card-img" src={v.photo_url} width="400" alt=''/>
+                                <div>{v.description}</div>
+                                <div>Overall Rating: </div>
+                                <div>Reviews: {v.reviews.length}</div>
+                            </div>
                         </Link>
                     )
                 })}
