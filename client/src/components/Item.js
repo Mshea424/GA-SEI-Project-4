@@ -117,7 +117,6 @@ export default class Item extends Component {
         }
     }
 
-
     render() {
         return (
             <div>
@@ -131,10 +130,10 @@ export default class Item extends Component {
                     <h3>Reviews:</h3>
                     {this.state.reviews.map((v) => {
                         return (
-                            <div>
+                            <div>    
                                 <p>{v.rating}</p>
                                 <h4>{v.name}</h4>
-                                <p>{v.body.substring(0, 10) + '...'}</p>
+                                <p>{v.body}</p>
                                 {
                                     v.thumbs.length > 0 ? 
                                     <div>👍 {v.thumbs.length}</div> :
