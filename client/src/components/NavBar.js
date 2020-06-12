@@ -5,13 +5,13 @@ import '../App.css'
 export default class NavBar extends Component {
     render() {
         return (
-            <div>
+            <div className="nav-bar">
                 
-                <Link to="/">Home Feed</Link>
+                <Link className="nav-item" to="/">Home Feed</Link>
                 
-                <Link to="/user">Users</Link>
+                <Link className="nav-item" to="/user">Users</Link>
 
-                <Link to="/createuser">Create Profile</Link>
+                <Link className="nav-item" to="/createuser">Create Profile</Link>
                                 
             </div>
         )

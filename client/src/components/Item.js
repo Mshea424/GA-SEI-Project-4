@@ -122,6 +122,9 @@ export default class Item extends Component {
         return (
             <div>
                 <div>
+                    <img src="" alt="header"/>
+                </div>
+                <div>
                     <h3>{this.state.name}</h3>
                     <img src={this.state.photo_url} alt=''/>
                     <p>{this.state.description}</p>

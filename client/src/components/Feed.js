@@ -35,13 +35,15 @@ export default class Feed extends Component {
                 <h1>Feed Page</h1>
                 {this.state.items.map((v) =>{
                     return (
-                        <Link to={`/item/${v.id}/`}>
+                        <Link className="card-text" to={`/item/${v.id}/`}>
                             <div className="card">
-                                <div>{v.name}</div>
+                                <div >{v.name}</div>
                                 <img className="card-img" src={v.photo_url} width="400" alt=''/>
-                                <div>{v.description}</div>
-                                <div>Overall Rating: </div>
-                                <div>Reviews: {v.reviews.length}</div>
+                                <div>{v.description.substring(0, 50) + '...'}</div>
+                                <div>
+                                    <div>Overall Rating: </div>
+                                    <div>Reviews: {v.reviews.length}</div>
+                                </div>
                             </div>
                         </Link>
                     )
