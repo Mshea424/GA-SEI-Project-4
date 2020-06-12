@@ -10,7 +10,7 @@ export default class Item extends Component {
         description: '',
         rating: '',
         vendor_url: '',
-        reviews: []
+        reviews: [],
     }
 
     componentDidMount() {
@@ -25,6 +25,14 @@ export default class Item extends Component {
             const res = await axios.get(`/api/v1/item/${itemId}/`)
             let newState = {...this.state}
             newState = res.data
+            newState.creatingReview = false
+            newState.reviewData = {
+                name: '',
+                body: '',
+                rating: 0,
+                user: this.props.userId,
+                item: itemId
+            }
             this.setState(newState)
             console.log(res.data)
             this.getTotalRating()
@@ -65,6 +73,30 @@ export default class Item extends Component {
         console.log(this.state.totalRating)
     }
 
+    toggleCreatingReview = () => {
+        this.setState({creatingReview: !this.state.creatingReview})
+    }
+
+    inputChange = (evt) => {
+        let newState = {...this.state}
+        newState.reviewData[evt.target.name] = evt.target.value
+        this.setState(newState)
+        console.log(this.state.reviewData)
+    }
+
+    postReview = async (evt) => {
+        evt.preventDefault()
+        try{
+            await axios.post('/api/v1/review/', this.state.reviewData)
+            this.getItem()
+            this.getTotalRating()
+        } catch (error) {
+            console.log('---- COULD NOT POST REVIEW ----')
+            console.log(error)
+            console.log('--------------------------------------')
+        }
+    }
+
     render() {
         return (
             <div>
@@ -90,10 +122,43 @@ export default class Item extends Component {
                             </div>
                         )
                     })}
-                    
-                    
+                </div>
+                <div>
+                    {this.props.userName === 'guest' ?
+                        <div>
+                            Create Profile to add review
+                        </div> :
+                        <div>
+                            <div onClick={this.toggleCreatingReview}>
+                                {this.state.creatingReview ?
+                                <div>Cancel Review</div> :
+                                <div>Review this item</div>}
+                            </div>
+                            <div>
+                                {this.state.creatingReview ?
+                                    <form onSubmit={this.postReview}>
+                                        <label htmlFor="rating">Rate this item:</label>
+                                        <input onChange={this.inputChange} type="number" min="1" max="5" name="rating"/>
+                                        <label htmlFor="name">Review Title:</label>
+                                        <input  onChange={this.inputChange} type="text" name="name"/>
+                                        <label htmlFor="body">Message: </label>
+                                        <input onChange={this.inputChange} type="text" name="body"/>                                        
+                                        <input type="submit" value="Post Review"/>
+                                    </form> :
+                                    null
+                                }
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
         )
     }
 }
+
+
+// name = models.CharField(max_length=255)
+//     body = models.TextField()
+//     rating = models.CharField(max_length=3)
+//     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews')
+//     item = models.ForeignKey(Item, on_delete=models.CASCADE, related_name='reviews')
