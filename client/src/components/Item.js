@@ -135,8 +135,8 @@ export default class Item extends Component {
                     {this.state.reviews.map((v) => {
                         return (
                             <div className="rating-card">    
-                                <h4>{v.name}</h4>
-                                <p>{v.rating}</p>
+                                <h4>"{v.name}"</h4>
+                                <p>Rating: {v.rating}</p>
                                 <p>{v.body}</p>
                                 {
                                     v.thumbs.length > 0 ? 
