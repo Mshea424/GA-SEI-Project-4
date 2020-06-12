@@ -53,3 +53,18 @@
   width: 100%;
   margin: 0 auto;
 }
+
+.item-img {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.rating-card {
+  width: 85%;
+  padding: 10px;
+  margin: 5px auto;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px lightgray;
+}

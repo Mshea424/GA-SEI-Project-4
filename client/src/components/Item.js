@@ -126,7 +126,7 @@ export default class Item extends Component {
                 </div>
                 <div>
                     <h3>{this.state.name}</h3>
-                    <img src={this.state.photo_url} alt=''/>
+                    <img className="item-img" src={this.state.photo_url} alt=''/>
                     <p>{this.state.description}</p>
                     <p>Overall Rating: {this.state.totalRating}</p>
                 </div>
@@ -134,9 +134,9 @@ export default class Item extends Component {
                     <h3>Reviews:</h3>
                     {this.state.reviews.map((v) => {
                         return (
-                            <div>    
-                                <p>{v.rating}</p>
+                            <div className="rating-card">    
                                 <h4>{v.name}</h4>
+                                <p>{v.rating}</p>
                                 <p>{v.body}</p>
                                 {
                                     v.thumbs.length > 0 ? 
