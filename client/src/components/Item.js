@@ -97,6 +97,27 @@ export default class Item extends Component {
         }
     }
 
+    postThumbs = async (evt) => {
+        evt.preventDefault()
+        let thumbsData = {
+            review: '',
+            user: ''
+        }
+        thumbsData.review = evt.target.name
+        thumbsData.user = this.props.userId
+        console.log(thumbsData)
+        try {
+            await axios.post('/api/v1/thumbs/', thumbsData)
+            this.getItem()
+            this.getTotalRating()
+        } catch (error) {
+            console.log('---- COULD NOT POST THUMBS ----')
+            console.log(error)
+            console.log('--------------------------------------')
+        }
+    }
+
+
     render() {
         return (
             <div>
@@ -116,8 +137,15 @@ export default class Item extends Component {
                                 <p>{v.body.substring(0, 10) + '...'}</p>
                                 {
                                     v.thumbs.length > 0 ? 
-                                    <div>Thumbs up: {v.thumbs.length}</div> :
+                                    <div>👍 {v.thumbs.length}</div> :
                                     null
+                                }
+                                {
+                                    this.props.userName === 'guest' ?
+                                    null :
+                                    <form onSubmit={this.postThumbs} name={v.id}>
+                                        <input type="submit" value="👍"/>
+                                    </form>
                                 }
                             </div>
                         )
@@ -157,8 +185,5 @@ export default class Item extends Component {
 }
 
 
-// name = models.CharField(max_length=255)
-//     body = models.TextField()
-//     rating = models.CharField(max_length=3)
-//     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews')
-//     item = models.ForeignKey(Item, on_delete=models.CASCADE, related_name='reviews')
+// review = 
+//     user = 
