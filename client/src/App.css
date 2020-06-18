@@ -68,3 +68,49 @@
   border-radius: 4px;
   box-shadow: 2px 2px 4px lightgray;
 }
+
+.user-card {
+  width: 85%;
+  padding: 10px;
+  margin: 5px auto;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px lightgray;
+}
+
+.user-header {
+  display: flex;
+}
+.user-img-container {
+  display: inline-block;
+}
+
+.user-img {
+  height: 140px;
+}
+
+.user-header-data {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.user-name {
+  display: inline-block;
+  margin: 20px 10px;
+  text-align: left;
+  font-size: 30px;
+}
+
+.user-review-count {
+  display: inline-block;
+  margin: 10px;
+  font-size: 12px;
+}
+
+.user-bio {
+  margin: 10px;
+  text-align: left;
+  font-size: 15px;
+  line-height: 30px;
+}

@@ -32,12 +32,18 @@ export default class User extends Component {
                 <h1>User Page</h1>
                 {this.state.users.map((v) =>{
                     return (
-                        <Link to={`/user/${v.id}/`}>
-                            <div>{v.name}</div>
-                            <img src={v.photo_url} width="400" alt=''/>
-                            <div>Contributed Reviews: {v.reviews.length}</div>
-                            <div>{v.bio}</div>
-                        </Link>
+                        <div className="user-card">
+                            <div className="user-header">
+                                <div className="user-img-container">
+                                    <img className="user-img" src={v.photo_url} width="150" alt=''/>
+                                </div>
+                                <div className="user-header-data">
+                                    <div className="user-name">{v.name}</div>
+                                    <div className="user-review-count">Contributed Reviews: {v.reviews.length}</div>
+                                </div>
+                            </div>
+                            <div className="user-bio">About Me: {v.bio}</div>
+                        </div>
                     )
                 })}
             </div>
