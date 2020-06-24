@@ -5,6 +5,7 @@
 
 .card {
   width: 45%;
+  min-width: 400px;
   height: 400px;
   display: inline-flex;
   flex-direction: column;
