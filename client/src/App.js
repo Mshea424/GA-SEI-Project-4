@@ -38,9 +38,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>
-          <img className="header-img" src="/images/header.png"/>
-        </div>
+        <img className="header-img" src="/images/header.png"/>
         <Router>
           <NavBar/>
           <Switch>
