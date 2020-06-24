@@ -6,6 +6,7 @@ import Item from './components/Item'
 import User from './components/User'
 import NavBar from './components/NavBar'
 import CreateUser from './components/CreateUser'
+import header from './images/header.png'
 export default class App extends Component {
   state = {
     userName: 'guest',
@@ -35,10 +36,11 @@ export default class App extends Component {
   componentDidMount() {
     console.log(this.state)
   }
+  
   render() {
     return (
       <div className="App">
-        <img className="header-img" src="images/header.png"/>
+        <img className="header-img" src={header} alt="header"/>
         <Router>
           <NavBar/>
           <Switch>
