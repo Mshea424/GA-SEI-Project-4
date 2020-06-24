@@ -128,7 +128,7 @@ export default class Item extends Component {
                     <p>Overall Rating: {this.state.totalRating}</p>
                 </div>
                 <div>
-                    <h3>Reviews:</h3>
+                    <h3>----- Reviews -----</h3>
                     {this.state.reviews.map((v) => {
                         return (
                             <div className="rating-card">    
