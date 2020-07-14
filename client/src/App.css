@@ -1,11 +1,15 @@
+body {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
 .App {
   text-align: center;
   margin: auto;
 }
 
 .card {
-  width: 45%;
-  min-width: 400px;
+  width: 400px;
   height: 400px;
   display: inline-flex;
   flex-direction: column;
@@ -47,7 +51,7 @@
 
 .nav-bar {
   display: flex;
-  margin: 10px 20px;
+  margin: 5px 15px;
   padding: 2px;
   background-color: gray;
   justify-content: space-evenly;

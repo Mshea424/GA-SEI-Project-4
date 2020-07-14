@@ -168,9 +168,9 @@ export default class Item extends Component {
                                         <label htmlFor="rating">Rate this item:</label>
                                         <input onChange={this.inputChange} type="number" min="1" max="5" name="rating"/>
                                         <label htmlFor="name">Review Title:</label>
-                                        <input  onChange={this.inputChange} type="text" name="name"/>
+                                        <textarea onChange={this.inputChange} id="name" name="name" cols="60" rows="1"></textarea> 
                                         <label htmlFor="body">Message: </label>
-                                        <input onChange={this.inputChange} type="text" name="body"/>                                        
+                                        <textarea onChange={this.inputChange} id="body" name="body" cols="60" rows="8"></textarea>                                        
                                         <input type="submit" value="Post Review"/>
                                     </form> :
                                     null

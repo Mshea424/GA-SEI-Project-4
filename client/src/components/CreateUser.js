@@ -44,7 +44,7 @@ export default class CreateUser extends Component {
                             </div>
                             <div>
                                 <label htmlFor="name">About You: (bio)</label>
-                                <input onChange={this.inputChange} type="text" name="bio"/>
+                                <textarea onChange={this.inputChange} id="bio" name="bio" cols="60" rows="8"></textarea>
                             </div>
                             <div>
                                 <label htmlFor="name">Profile Photo (url):</label>
